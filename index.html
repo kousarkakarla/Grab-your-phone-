@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Grab Your Mobile – Buy Smartphones Online</title>
+  <meta name="description" content="Shop the latest smartphones from Apple, Samsung, Google, OnePlus and more. Add to cart and buy online.">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body data-page="home">
+  <div id="site-header"></div>
+
+  <!-- Hero carousel -->
+  <div id="heroCarousel" class="carousel slide hero-carousel" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="large1.jpg" class="d-block w-100" alt="Large screen phones">
+        <div class="carousel-caption text-start">
+          <h2>Big screens. Bigger deals.</h2>
+          <p>Foldables and large-screen phones with up to 15% off.</p>
+          <a href="#shop" class="btn btn-warning fw-semibold">Shop now</a>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="large2.jpg" class="d-block w-100" alt="Flagship smartphones">
+        <div class="carousel-caption text-start">
+          <h2>Flagship cameras</h2>
+          <p>Extra 5% instant discount with bank offers on flagships.</p>
+          <a href="#shop" class="btn btn-warning fw-semibold" data-quick="bank">See bank offers</a>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="m.jpg" class="d-block w-100" alt="New Android phones">
+        <div class="carousel-caption text-start">
+          <h2>New arrivals</h2>
+          <p>Use code <strong>GRAB10</strong> for 10% off your order.</p>
+          <a href="#shop" class="btn btn-warning fw-semibold">Explore</a>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <main class="container">
+    <!-- Offer strip -->
+    <section class="row g-3 my-4">
+      <div class="col-md-4">
+        <div class="offer-card"><i class="bi bi-ticket-perforated"></i>
+          <div><strong>10% off with GRAB10</strong><small>On orders above ₹10,000 (max ₹5,000)</small></div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="offer-card"><i class="bi bi-arrow-left-right"></i>
+          <div><strong>Exchange up to ₹6,350</strong><small>Trade in your old phone</small></div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="offer-card"><i class="bi bi-credit-card"></i>
+          <div><strong>5% bank offer</strong><small>On selected flagship phones</small></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Brands -->
+    <section class="mb-4">
+      <h2 class="section-heading">Shop by brand</h2>
+      <div class="brand-strip" id="brand-strip"></div>
+    </section>
+
+    <!-- Shop -->
+    <section id="shop" class="row g-4">
+      <aside class="col-lg-3">
+        <div class="offcanvas-lg offcanvas-start" tabindex="-1" id="filters" aria-labelledby="filtersLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="filtersLabel">Filters</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#filters" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <div class="filter-panel w-100">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h6 class="mb-0 fw-bold">Filters</h6>
+                <button class="btn btn-link btn-sm p-0" id="clear-filters">Clear all</button>
+              </div>
+
+              <div class="filter-group">
+                <p class="filter-title">Brand</p>
+                <div id="brand-filters"></div>
+              </div>
+
+              <div class="filter-group">
+                <p class="filter-title">Price</p>
+                <div id="price-filters"></div>
+              </div>
+
+              <div class="filter-group">
+                <p class="filter-title">Storage</p>
+                <div id="storage-filters" class="d-flex flex-wrap gap-2"></div>
+              </div>
+
+              <div class="filter-group border-0">
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" role="switch" id="bank-only">
+                  <label class="form-check-label" for="bank-only">Bank offer only</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <div class="col-lg-9">
+        <div class="shop-toolbar">
+          <div>
+            <h2 class="section-heading mb-0" id="results-title">All smartphones</h2>
+            <small class="text-muted" id="results-count"></small>
+          </div>
+          <div class="d-flex gap-2">
+            <button class="btn btn-outline-secondary d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#filters">
+              <i class="bi bi-funnel"></i> Filters
+            </button>
+            <select class="form-select" id="sort" aria-label="Sort products">
+              <option value="relevance">Sort: Popularity</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="discount">Biggest discount</option>
+              <option value="rating">Customer rating</option>
+            </select>
+          </div>
+        </div>
+        <div id="active-chips" class="d-flex flex-wrap gap-2 mb-3"></div>
+        <div class="row row-cols-2 row-cols-md-3 row-cols-xl-4 g-3" id="product-grid"></div>
+        <div id="empty-state" class="empty-state d-none">
+          <i class="bi bi-search"></i>
+          <h5>No phones match your filters</h5>
+          <p class="text-muted">Try removing a filter or searching for something else.</p>
+          <button class="btn btn-primary" id="empty-clear">Clear filters</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>
